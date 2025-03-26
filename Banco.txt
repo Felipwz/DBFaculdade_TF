@@ -1,0 +1,91 @@
+1. Entidades e seus Atributos
+
+Usuário
+
+id_usuario (PK) - Identificador único do usuário
+
+nome - Nome completo do usuário
+
+email - Endereço de e-mail
+
+telefone - Número de telefone
+
+tipo - Tipo de usuário (Aluno, Professor, Funcionário)
+
+Livro
+
+id_livro (PK) - Identificador único do livro
+
+titulo - Título do livro
+
+autor - Nome do autor
+
+editora - Editora do livro
+
+ano_publicacao - Ano de publicação
+
+categoria - Gênero do livro
+
+qtd_exemplares - Quantidade total de exemplares disponíveis
+
+Empréstimo
+
+id_emprestimo (PK) - Identificador único do empréstimo
+
+id_usuario (FK) - Usuário que fez o empréstimo
+
+id_livro (FK) - Livro emprestado
+
+data_emprestimo - Data do empréstimo
+
+data_devolucao - Data prevista para devolução
+
+status - Status do empréstimo (Em andamento, Finalizado, Atrasado)
+
+Reserva
+
+id_reserva (PK) - Identificador único da reserva
+
+id_usuario (FK) - Usuário que fez a reserva
+
+id_livro (FK) - Livro reservado
+
+data_reserva - Data da reserva
+
+status - Status da reserva (Ativa, Expirada, Cancelada)
+
+Funcionário
+
+id_funcionario (PK) - Identificador único do funcionário
+
+nome - Nome completo
+
+email - Endereço de e-mail
+
+cargo - Cargo na biblioteca
+
+Multa
+
+id_multa (PK) - Identificador único da multa
+
+id_usuario (FK) - Usuário que recebeu a multa
+
+valor - Valor da multa
+
+descricao - Motivo da multa
+
+status_pagamento - Status do pagamento (Pendente, Pago)
+
+2. Relacionamentos e Cardinalidade
+
+Usuário - Empréstimo: Um usuário pode fazer vários empréstimos (1:N)
+
+Usuário - Reserva: Um usuário pode reservar vários livros (1:N)
+
+Livro - Empréstimo: Um livro pode ser emprestado várias vezes (1:N)
+
+Livro - Reserva: Um livro pode ter várias reservas (1:N)
+
+Funcionário - Empréstimo: Um funcionário gerencia múltiplos empréstimos (1:N)
+
+Usuário - Multa: Um usuário pode ter várias multas associadas (1:N)
